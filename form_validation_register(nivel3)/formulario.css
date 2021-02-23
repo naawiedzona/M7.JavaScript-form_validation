@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: pink;
+    background: linear-gradient(rgb(250, 190, 202), rgb(238, 88, 238));
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Truculenta', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: white;
+    overflow: hidden;
+    border-radius: 5px;
+    width: 500px;
+    background-color: rgba(248, 248, 248, 0.295);
+}
+
+.header {
+    text-align: center;
+}
+
+.header h2 {
+    color: rgb(222, 23, 240);
+    padding: 5px;
+}
+
+.form {
+    padding: 40px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+    position: relative;
+    opacity: 0.7;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.form-control input {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    font-family: monospace;
+    font-size: 15px;
+    color: rgb(245, 14, 206);
+}
+
+.form-control select {
+    padding: 10px;
+}
+
+#provincia {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control.success input {
+    border-color: green;
+}
+
+.form-control.error input {
+    border-color: red;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 55px;
+    right: 20px;
+}
+
+
+.form-control.success i.fa-check-circle {
+    color: green;
+    visibility: visible;
+}
+
+.form-control.error i.fa-times-circle {
+    color: red;
+    visibility: visible;
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    padding: 4px;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: red;
+}
+
+.btn {
+    padding: 8px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid rgb(222, 23, 240);
+    color: rgb(222, 23, 240);
+}
+
+.btn:hover {
+    background-color: rgb(222, 23, 240);
+    color: rgba(255, 255, 255, 0.685);
+}
+
+.info {
+    background-color: rgba(138, 130, 130, 0.801);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+  }
+
+  
+  .window {
+    background-color:rgba(0, 0, 0, 0.87);
+    border-radius: 4px;
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+  }
+  .closeicon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  #text{
+    color: white;
+    font-size: 1.4em;
+    border-radius: 4px;
+    
+  }
+#text h2{
+    color: rgb(222, 23, 240);
+}
+.window i{
+    font-size: 40px;
+    color: rgb(222, 23, 240);
+    margin: 10px;
+}
+
+.window i:hover{
+    color: red;
+}
