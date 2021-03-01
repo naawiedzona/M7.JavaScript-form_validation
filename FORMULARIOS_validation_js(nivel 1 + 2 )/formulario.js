@@ -1,10 +1,3 @@
-//  regex
-/* 
- var regexUser= /^[a-z-Z0-9\_\-]{5,25}/;
-var regexEmail=/^[a-z-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-var regexPassword=/[a-zA-Z+\d+.]{8,}/;
-var regexCity=/[a-zA-Z]{3,40}/;  */
-
 // las partes del documento
 
 const form = document.querySelector("#form");
@@ -13,6 +6,7 @@ const city = document.querySelector("#city");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const password2 = document.querySelector("#password2");
+const formParts = document.querySelectorAll(".form-control");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,6 +14,7 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
+  var validate = false;
   const usernameValue = username.value.trim();
   const emailValue = email.value.trim();
   const cityValue = city.value.trim();
@@ -57,7 +52,9 @@ function checkInputs() {
   // password
   if (passwordValue === "") {
     setError(password, "rellena tu contraseña");
-  } else if (!passwordValue.match(/^[a-z-Z0-9\_\-]{5,25}/)) {
+  } else if (
+    !passwordValue.match(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/)
+  ) {
     setError(password, "contraseña no valida");
   } else {
     setSuccess(password);
@@ -71,7 +68,17 @@ function checkInputs() {
   } else {
     setSuccess(password2);
   }
+
+  for (i = 0; i < formParts.length; i++) {
+    if (formParts[i].className === "form-control error") {
+      validate = true;
+    }
+  }
+  if (!validate) {
+    correctInfo();
+  }
 }
+
 // en el caso de rellenar mal
 function setError(input, message) {
   const formControl = input.parentElement;
@@ -83,4 +90,17 @@ function setError(input, message) {
 function setSuccess(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control success";
+}
+
+function correctInfo() {
+  alert("la informacion ok");
+  username.value = "";
+  email.value = "";
+  city.value = "";
+  password.value = "";
+  password2.value = "";
+  province.value = "Barcelona";
+  for (let i = 0; i < formParts.length; i++) {
+    formParts[i].className = "form-control";
+  }
 }

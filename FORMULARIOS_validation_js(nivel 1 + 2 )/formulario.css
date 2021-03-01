@@ -12,6 +12,7 @@ body {
     font-family: 'Truculenta', sans-serif;
     margin: 0;
     overflow: hidden;
+    
 }
 
 .container {
@@ -29,6 +30,7 @@ body {
 .header h2 {
     color: rgb(222, 23, 240);
     padding: 5px;
+    caret-color: transparent;
 }
 
 .form {
@@ -46,6 +48,7 @@ body {
     display: inline-block;
     margin-bottom: 5px;
     font-size: 20px;
+    caret-color: transparent;
 }
 
 .form-control input {
@@ -82,7 +85,6 @@ body {
     top: 55px;
     right: 20px;
 }
-
 
 .form-control.success i.fa-check-circle {
     color: green;

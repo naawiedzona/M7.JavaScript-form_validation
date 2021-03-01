@@ -73,10 +73,7 @@ function checkInputs() {
     setSuccess(password2);
   }
 
-  // el if del modal que debe salir cuando todos los datos estarán rellenados correctamente
-
   for (i = 0; i < formParts.length; i++) {
-    //formParts.className;
     if (formParts[i].className === "form-control error") {
       validate = true;
     }
@@ -98,7 +95,6 @@ function setSuccess(input) {
   formControl.className = "form-control success";
 }
 
-//el modal que debe salir cuando todos los datos esten bien introducidos
 function correctInfo() {
   document.querySelector(".info").style.display = "block";
   document.querySelector(".message").innerHTML = `<div id="text">
@@ -113,4 +109,10 @@ document.querySelector("#closeIcon").onclick = closeWindow;
 
 function closeWindow() {
   document.querySelector(".info").style.display = "none";
+  username.value = "";
+  email.value = "";
+  city.value = "";
+  password.value = "";
+  password2.value = "";
+  province.value = "Barcelona";
 }
